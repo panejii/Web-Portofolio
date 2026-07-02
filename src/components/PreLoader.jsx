@@ -1,6 +1,4 @@
 import { useState,useEffect } from "react"
-// import SkeletonHero from './SkeletonHero.jsx'
-// import SkeletonNavbar from './SkeletonNavbar.jsx'
 import App from "../App";
 import Navbar from './Navbar.jsx'
 import Footer from './Footer.jsx'
@@ -31,6 +29,7 @@ const PreLoader = () => {
       ) : (
         <div className="container mx-auto px-4">
             <Navbar />
+
             <App />
             <Footer />
         </div>
