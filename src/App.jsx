@@ -138,10 +138,10 @@ const App = () => {
       {/* Proyek */}
 
       {/* Form Kontak */}
-      <div className="kontak mt-32 p-10">
+      <div className="kontak mt-32 sm:p-10 p-0">
         <h1 className=" text-4xl text-center font-bold mb-3">Kontak</h1>
         <p className="text-base/loose text-center opacity-50 mb-10">Mari terhubung dengan saya</p>
-        <form action="https://formsubmit.co/faneziaja@gmail.com" method="POST" className="bg-zinc-800 p-12 mx-auto w-fit rounded-md" autoComplete="off">
+        <form action="https://formsubmit.co/faneziaja@gmail.com" method="POST" className="bg-zinc-800 p-12 mx-auto sm:w-fit w-full rounded-md" autoComplete="off">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <label className="font-semibold">Nama Lengkap</label>
