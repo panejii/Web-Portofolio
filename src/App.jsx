@@ -1,11 +1,12 @@
 import DataImage from "./data";
 import {listTools,listProyek} from "./data"
 
+
 const App = () => {
   return (
     <>
       <div className="hero grid grid-cols-1 md:grid-cols-2 pt-6 items-center xl:gap-0 gap-6 ">
-        <div>
+        <div className="animate__animated animate__fadeInUp">
           <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
             <img
               src={DataImage.HeroImage}
@@ -36,21 +37,21 @@ const App = () => {
               href="#"
               className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600"
             >
-              Lihat Proyek <i class="ri-arrow-down-line ri-lg"></i>
+              Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i>
             </a>
           </div>
         </div>
         <img
           src={DataImage.HeroImage}
           alt="panji"
-          className="w-[500px] md:ml-auto"
+          className="w-[500px] md:ml-auto animate__animated animate__fadeInUp animate__delay-1s"
           loading="lazy"
         />
       </div>
 
       {/* tentang */}
-      <div className="tentang mt-32 py-10">
-        <div className="xl:w-2/3 lg:w-3/4 w-full  mx-auto bg-zinc-700 rounded-lg p-4">
+      <div className="tentang mt-32 py-10" id="tentang">
+        <div className="xl:w-2/3 lg:w-3/4 w-full  mx-auto bg-zinc-700 rounded-lg p-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
           <img
             src={DataImage.HeroImage}
             alt="Foto Paneji"
@@ -89,16 +90,16 @@ const App = () => {
           </div>
         </div>
 
-        <div className="tools mt-32">
-          <h1 className="text-4xl/snug font-bold mb-3">Tools yang Digunakan</h1>
-          <p className="w-2/5 text-base/loose opacity-50">
+        <div className="tools mt-32" >
+          <h1 className="text-4xl/snug font-bold mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Tools yang Digunakan</h1>
+          <p className="w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
             Berikut adalah beberapa tools yang saya gunakan dalam pengerjaan
             proyek
           </p>
           <div className="tools-box mt-12 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
 
             {listTools.map(tool => (
-              <div className="group flex items-center gap-3 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800" key={tool.id}>
+              <div className="group flex items-center gap-3 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800" key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true">
                 <img src={tool.gambar} alt="tools image" className="w-12 bg-zinc-800 p-1 group-hover:bg-zinc-900" loading="lazy"  />
                 <div>
                   <h4 className=" font-bold">{tool.nama}</h4>
@@ -112,12 +113,12 @@ const App = () => {
       {/* tentang */}
 
       {/* Proyek */}
-      <div className="proyek mt-32 p-12">
-          <h1 className=" text-4xl text-center font-bold mb-3">Proyek</h1>
-          <p className=" text-base text-center opacity-50">Berikut adalah beberapa proyek yang telah saya buat</p>
+      <div className="proyek mt-32 p-12" id="proyek">
+          <h1 className=" text-4xl text-center font-bold mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Proyek</h1>
+          <p className=" text-base text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Berikut adalah beberapa proyek yang telah saya buat</p>
           <div className="proyek-box grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-12 gap-3">
             {listProyek.map(proyek => (
-              <div key={proyek.id} className="p-6 bg-zinc-800">
+              <div key={proyek.id} className="p-6 bg-zinc-800" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={proyek.dad} data-aos-once="true">
                 <img src={proyek.gambar} alt="Proyek Image" className=" w-full" loading="lazy" />
                 <div>
                   <h1 className=" text-2xl font-bold my-3">{proyek.nama}</h1>
@@ -138,10 +139,10 @@ const App = () => {
       {/* Proyek */}
 
       {/* Form Kontak */}
-      <div className="kontak mt-32 sm:p-10 p-0">
-        <h1 className=" text-4xl text-center font-bold mb-3">Kontak</h1>
-        <p className="text-base/loose text-center opacity-50 mb-10">Mari terhubung dengan saya</p>
-        <form action="https://formsubmit.co/faneziaja@gmail.com" method="POST" className="bg-zinc-800 p-12 mx-auto sm:w-fit w-full rounded-md" autoComplete="off">
+      <div className="kontak mt-32 sm:p-10 p-0" id="kontak">
+        <h1 className=" text-4xl text-center font-bold mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Kontak</h1>
+        <p className="text-base/loose text-center opacity-50 mb-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Mari terhubung dengan saya</p>
+        <form action="https://formsubmit.co/faneziaja@gmail.com" method="POST" className="bg-zinc-800 p-12 mx-auto sm:w-fit w-full rounded-md" autoComplete="off" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800" data-aos-once="true">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <label className="font-semibold">Nama Lengkap</label>
