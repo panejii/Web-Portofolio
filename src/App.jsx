@@ -8,7 +8,6 @@ import Hero from "./components/LandingPage/Hero"
 const App = () => {
   return (
     <>
-      
       <Hero />
 
       <Tentang />
