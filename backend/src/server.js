@@ -6,6 +6,7 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 
 import projectRoutes from "./routes/projectRoutes.js";
+import skillRoutes from "./routes/skillRoutes.js";
 
 dotenv.config();
 
@@ -17,6 +18,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/projects", projectRoutes);
+
+app.use("/api/skills", skillRoutes);
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");

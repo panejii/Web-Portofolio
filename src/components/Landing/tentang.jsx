@@ -1,7 +1,26 @@
 import DataImage from "../../data/data";
-import {listTools,listProyek} from "../../data/data"
+import { useEffect, useState } from "react";
+import { getSkills } from "../../services/skillService";
+import { skills } from "../../../backend/seed/skills";
 
-const tentang = () => {
+const Tentang = () => {
+
+  const [skills, setSkills] = useState([]);
+  
+  useEffect(() => {
+    const fetchSkills = async () => {
+      try {
+        const data = await getSkills();
+        setSkills(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+      fetchSkills();
+  }, []);
+  
+  
   return (
     <>
       <div className="tentang mt-32 py-10" id="tentang">
@@ -52,12 +71,12 @@ const tentang = () => {
           </p>
           <div className="tools-box mt-12 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
 
-            {listTools.map(tool => (
-              <div className="group flex items-center gap-3 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800" key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true">
-                <img src={tool.gambar} alt="tools image" className="w-12 bg-zinc-800 p-1 group-hover:bg-zinc-900" loading="lazy"  />
+            {skills.map(tool => (
+              <div className="group flex items-center gap-3 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800" key={tool._id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.aosDelay} data-aos-once="true">
+                <img src={tool.imageUrl} alt="tools image" className="w-12 bg-zinc-800 p-1 group-hover:bg-zinc-900" loading="lazy"  />
                 <div>
-                  <h4 className=" font-bold">{tool.nama}</h4>
-                  <p className=" opacity-50">{tool.ket}</p>
+                  <h4 className=" font-bold">{tool.name}</h4>
+                  <p className=" opacity-50">{tool.category}</p>
                 </div>
             </div>
             )) } 
@@ -68,4 +87,4 @@ const tentang = () => {
   )
 }
 
-export default tentang
+export default Tentang
