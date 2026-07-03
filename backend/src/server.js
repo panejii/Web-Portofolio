@@ -7,6 +7,7 @@ import { connectDB } from "./config/db.js";
 
 import projectRoutes from "./routes/projectRoutes.js";
 import skillRoutes from "./routes/skillRoutes.js";
+import messageRoutes from "./routes/messageRoutes.js"
 
 dotenv.config();
 
@@ -20,6 +21,8 @@ app.use(express.json());
 app.use("/api/projects", projectRoutes);
 
 app.use("/api/skills", skillRoutes);
+
+app.use("/api/messages", messageRoutes);
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");
