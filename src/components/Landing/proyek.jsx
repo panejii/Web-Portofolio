@@ -1,7 +1,26 @@
 
-import {listProyek} from "../../data/data"
+import { useEffect, useState } from "react";
+import { getProjects } from "../../services/projectService";
+
+
 
 const proyek = () => {
+
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const data = await getProjects();
+        setProjects(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
     <>
         
@@ -9,14 +28,14 @@ const proyek = () => {
                   <h1 className=" text-4xl text-center font-bold mb-3" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Proyek</h1>
                   <p className=" text-base text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Berikut adalah beberapa proyek yang telah saya buat</p>
                   <div className="proyek-box grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-12 gap-3">
-                    {listProyek.map(proyek => (
-                      <div key={proyek.id} className="p-6 bg-zinc-800" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={proyek.dad} data-aos-once="true">
-                        <img src={proyek.gambar} alt="Proyek Image" className=" w-full" loading="lazy" />
+                    {projects.map(proyek => (
+                      <div key={proyek._id} className="p-6 bg-zinc-800" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={proyek.aosDelay} data-aos-once="true">
+                        <img src={proyek.imageUrl} alt="Proyek Image" className=" w-full" loading="lazy" />
                         <div>
-                          <h1 className=" text-2xl font-bold my-3">{proyek.nama}</h1>
-                          <p className="text-base/loose mb-3">{proyek.desk}</p>
+                          <h1 className=" text-2xl font-bold my-3">{proyek.title}</h1>
+                          <p className="text-base/loose mb-3">{proyek.description}</p>
                           <div className="flex flex-wrap gap-2">
-                            {proyek.tools.map((tool, index) => (
+                            {proyek.techStack.map((tool, index) => (
                               <p className=" py-1 px-3 border border-zinc-500 bg-zinc-700 rounded-md font-semibold" key={index}>{tool}</p>
                             ))}
                           </div>
