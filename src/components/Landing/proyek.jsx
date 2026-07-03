@@ -1,5 +1,5 @@
 
-import {listProyek} from "../../data"
+import {listProyek} from "../../data/data"
 
 const proyek = () => {
   return (

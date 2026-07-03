@@ -1,4 +1,4 @@
-import DataImage from "../../data"
+import DataImage from "../../data/data"
 
 const Hero = () => {
   return (

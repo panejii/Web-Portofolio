@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 
 import 'remixicon/fonts/remixicon.css'
-import PreLoader from './components/PreLoader.jsx'
+import PreLoader from './components/common/PreLoader'
 
 import 'animate.css';
 import AOS from 'aos';

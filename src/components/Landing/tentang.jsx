@@ -1,5 +1,5 @@
-import DataImage from "../../data";
-import {listTools,listProyek} from "../../data"
+import DataImage from "../../data/data";
+import {listTools,listProyek} from "../../data/data"
 
 const tentang = () => {
   return (

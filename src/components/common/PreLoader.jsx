@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react"
-import App from "../App";
+import App from "../../App.jsx";
 import Navbar from './Navbar.jsx'
 import Footer from './Footer.jsx'
 
