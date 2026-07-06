@@ -1,9 +1,7 @@
 import { useState,useEffect } from "react"
-import App from "../../App.jsx";
-import Navbar from './Navbar.jsx'
-import Footer from './Footer.jsx'
 
 import 'animate.css'
+import App from "../../App";
 
 const PreLoader = () => {
     
@@ -28,10 +26,7 @@ const PreLoader = () => {
         
       ) : (
         <div className="container mx-auto px-4">
-            <Navbar />
-
-            <App />
-            <Footer />
+            <App/>
         </div>
       )}
     </>
