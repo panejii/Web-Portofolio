@@ -1,9 +1,76 @@
-import React from 'react'
+import { useState } from "react";
 
-const login = () => {
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    console.log({
+      email,
+      password,
+    });
+  };
+
   return (
-    <div>login</div>
-  )
-}
+    <div className="min-h-screen bg-zinc-900 flex items-center justify-center px-4">
+      <div className="w-full max-w-md bg-zinc-700 rounded-xl shadow-lg p-8">
 
-export default login
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-white">
+            Admin Login
+          </h1>
+
+          <p className="text-white/50 mt-2">
+            Silakan masuk untuk mengelola portofolio
+          </p>
+        </div>
+
+        <form
+          onSubmit={handleLogin}
+          className="space-y-5"
+        >
+
+          <div>
+            <label className="block mb-2 font-medium text-white">
+              Email
+            </label>
+
+            <input
+              type="email"
+              placeholder="example@gmail.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label className="block mb-2 font-medium text-white">
+              Password
+            </label>
+
+            <input
+              type="password"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-violet-700 text-white py-3 rounded-lg hover:bg-violet-600 transition"
+          >
+            Login
+          </button>
+
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

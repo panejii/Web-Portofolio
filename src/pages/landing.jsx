@@ -9,7 +9,7 @@ import Kontak from '../components/Landing/kontak'
 
 const Landing = () => {
   return (
-    <div>
+    <div className='container mx-auto'>
         <Navbar/>
         
         <Hero />
