@@ -8,6 +8,7 @@ import { connectDB } from "./config/db.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import skillRoutes from "./routes/skillRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js"
+import authRoutes from "./routes/authRoutes.js"
 
 dotenv.config();
 
@@ -17,6 +18,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/api/auth", authRoutes);
 
 app.use("/api/projects", projectRoutes);
 
