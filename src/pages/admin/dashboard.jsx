@@ -1,9 +1,14 @@
-import React from 'react'
+import { Typography } from "antd";
 
-const dashboard = () => {
+const { Title } = Typography;
+
+const Dashboard = () => {
   return (
-    <div>dashboard</div>
-  )
-}
+    <>
+      <Title level={2}>Dashboard</Title>
+      <p>Selamat datang di halaman admin.</p>
+    </>
+  );
+};
 
-export default dashboard
+export default Dashboard;
