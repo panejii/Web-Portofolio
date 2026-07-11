@@ -1,5 +1,27 @@
 import Message from "../models/Message.js";
 
+export const markAsRead = async (req, res) => {
+  try {
+    const message = await Message.findByIdAndUpdate(
+      req.params.id,
+      { isRead: true },
+      { new: true }
+    );
+
+    if (!message) {
+      return res.status(404).json({
+        message: "Pesan tidak ditemukan",
+      });
+    }
+
+    res.status(200).json(message);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
 export const createMessage = async (req, res) => {
   try {
     const newMessage = await Message.create(req.body);

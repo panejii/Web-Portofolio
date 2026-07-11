@@ -24,7 +24,7 @@ const Tentang = () => {
   return (
     <>
       <div className="tentang mt-32 py-10" id="tentang">
-        <div className="xl:w-2/3 lg:w-3/4 w-full  mx-auto bg-zinc-700 rounded-lg p-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+        <div className="xl:w-2/3 lg:w-3/4 w-full  mx-auto bg-zinc-700 rounded-lg p-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1500">
           <img
             src={DataImage.HeroImage}
             alt="Foto Paneji"
