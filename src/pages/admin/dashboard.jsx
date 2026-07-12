@@ -19,6 +19,8 @@ import {
   ArrowRightOutlined,
 } from "@ant-design/icons";
 
+import TechStackChart from "../../components/admin/TechStackChart"
+
 import { getProjects } from "../../services/projectService";
 import { getSkills } from "../../services/skillService";
 import { getMessages } from "../../services/messageService";
@@ -118,6 +120,13 @@ const Dashboard = () => {
           </Card>
         </Col>
       </Row>
+
+      <Card
+        style={{ marginTop: 24, borderRadius: 12 }}
+        title="Distribusi Tech Stack Project"
+      >
+        <TechStackChart projects={projects} loading={loading} />
+      </Card>
 
       <Card
         style={{ marginTop: 24, borderRadius: 12 }}

@@ -15,14 +15,12 @@ const Hero = () => {
             <q>Beuh bikin web portofolio make React+Tailwind CSS euy</q>
           </div>
           <h1 className="text-5xl/tight font-bold mb-6">
-            Saya, Fanezi siap mengguncang dunia{" "}
+            Saya, Fanezi {" "}
           </h1>
           <p className="text-base/loose opacity-50 mb-6">
             Saya adalah seorang Frontend Developer yang berfokus pada
             pengembangan antarmuka web yang interaktif, responsif, dan ramah
-            pengguna. Menggunakan React, Tailwind CSS, dan berbagai teknologi
-            modern, saya berkomitmen menghadirkan pengalaman digital yang
-            menarik sekaligus fungsional.{" "}
+            pengguna. Menggunakan React, Tailwind CSS.{" "}
           </p>
           <div className="flex items-center md:gap-6 gap-3">
             <a
